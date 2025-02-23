@@ -1,9 +1,9 @@
 export interface IContact {
   id: string;
-  name: string;
-  number: string;
+  username: string;
+  phone: string;
 }
 
 export interface IContactObj extends IContact {
-  onHandleDeleteContact: (name: string) => void;
+  onHandleDeleteContact: (username: string) => void;
 }

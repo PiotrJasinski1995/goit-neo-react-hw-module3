@@ -1,5 +1,4 @@
 import Contact from "../Contact/Contact";
-
 import { IContact } from "../../types/types";
 import { ContactListStyled } from "./styled";
 
@@ -15,14 +14,14 @@ const ContactList = ({
   return (
     <ContactListStyled>
       {contacts.map((contact) => {
-        const { id, name, number } = contact;
+        const { id, username, phone } = contact;
 
         return (
           <li key={id}>
             <Contact
               id={id}
-              name={name}
-              number={number}
+              username={username}
+              phone={phone}
               onHandleDeleteContact={onHandleDeleteContact}
             />
           </li>

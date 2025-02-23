@@ -5,8 +5,8 @@ import sprite from "../../assets/icons.svg";
 
 const Contact = ({
   id = "",
-  name = "",
-  number = "",
+  username = "",
+  phone = "",
   onHandleDeleteContact,
 }: IContactObj) => {
   const handleDeleteContact = () => {
@@ -20,13 +20,13 @@ const Contact = ({
           <svg className="contact-icon" width="18" height="18">
             <use href={sprite + "#icon-person"}></use>
           </svg>
-          <span>{name}</span>
+          <span>{username}</span>
         </ContactLineStyled>
         <ContactLineStyled>
           <svg className="contact-icon" width="18" height="18">
             <use href={sprite + "#icon-phone"}></use>
           </svg>
-          <span>{number}</span>
+          <span>{phone}</span>
         </ContactLineStyled>
       </ContactLinesStyled>
       <button type="button" onClick={handleDeleteContact}>

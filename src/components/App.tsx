@@ -6,7 +6,6 @@ import SearchBox from "./SearchBox/SearchBox.js";
 import Section from "./Section/Section.js";
 import MainHeading from "./MainHeading/MainHeading.js";
 import Notification from "./Notification/Notification.js";
-
 import { IContact } from "../types/types.js";
 
 function App() {
@@ -34,18 +33,20 @@ function App() {
     }
   }, [contacts]);
 
-  const handleFormSubmit = (name: string, number: string) => {
-    const nameContacts = contacts.map((contact) => contact.name.toLowerCase());
+  const handleFormSubmit = (username: string, phone: string) => {
+    const nameContacts = contacts.map((contact) =>
+      contact.username.toLowerCase()
+    );
 
-    if (nameContacts.indexOf(name.toLowerCase()) !== -1) {
-      alert(`${name} is already in contacts.`);
+    if (nameContacts.indexOf(username.toLowerCase()) !== -1) {
+      alert(`${username} is already in contacts.`);
     } else {
       setContacts((previousContacts) => [
         ...previousContacts,
         {
           id: nanoid(),
-          name,
-          number,
+          username,
+          phone,
         },
       ]);
     }
@@ -57,7 +58,7 @@ function App() {
     );
 
   const visibleContacts = contacts.filter((contact) =>
-    contact.name.toLowerCase().includes(filter.toLowerCase())
+    contact.username.toLowerCase().includes(filter.toLowerCase())
   );
 
   return (
